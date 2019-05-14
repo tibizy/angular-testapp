@@ -1,0 +1,41 @@
+<div>
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a ui-sref="users">Home</a></li>
+    <li class="breadcrumb-item active">New User</li>
+  </ol>
+  <div width="100%" style="margin-bottom: 2rem;">
+    <h5>New User</h5>
+  </div>
+  <br />
+  <form id="user-form">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" required data-ng-model="formData.name" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" required data-ng-model="formData.email" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="tel">Phone</label>
+      <input type="tel" id="phone" data-ng-model="formData.phone" class="form-control">
+    </div>
+    <fieldset>
+      <legend>Address:</legend>
+      <div class="form-group">
+        <label for="address.street">Street</label>
+        <input type="text" id="address.street" data-ng-model="formData.address.street" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="address.city">City</label>
+        <input type="text" id="address.city" data-ng-model="formData.address.city" class="form-control">
+      </div>
+    </fieldset>
+    <div class="form-group">
+      <label for="website">Website</label>
+      <input type="text" id="website" data-ng-model="formData.website" class="form-control">
+    </div>
+    <button type="button" class="btn btn-primary" data-ng-click="submitForm(formData, $event)">Submit</button>
+    <button type="button" class="btn btn-default" ui-sref="users">Cancel</button>
+  </form>
+</div>

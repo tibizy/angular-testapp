@@ -1,0 +1,22 @@
+<div>
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a ui-sref="users">Home</a></li>
+    <li class="breadcrumb-item active">New Post</li>
+  </ol>
+  <div width="100%">
+    <h5>New Posts</h5>
+  </div>
+  <br />
+  <form id="post-form">
+    <div class="form-group">
+      <label for="title">title</label>
+      <input type="text" id="title" required data-ng-model="formData.title" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="body">Body</label>
+      <textarea type="body" id="body" required data-ng-model="formData.body" class="form-control"></textarea>
+    </div>
+    <button type="button" class="btn btn-primary" data-ng-click="submitForm(formData, $event)">Submit</button>
+    <button type="button" class="btn btn-default" ui-sref="users">Cancel</button>
+  </form>
+</div>

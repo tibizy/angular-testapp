@@ -1,0 +1,25 @@
+<div data-ng-controller="CommentsController" ui-view>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a ui-sref="users">Home</a></li>
+      <li class="breadcrumb-item"><a ui-sref="posts({ user_id: user_id })">Posts</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Comments</li>
+    </ol>
+  </nav>
+  <div width="100%">
+    <h5 style="display: inline">Comments</h5>
+    <a style="float: right" href="#" data-ng-click="sort()">Sort by email </a>
+  </div>
+  <br>
+  <div class="list-group">
+    <div ng-repeat="data in comments | orderBy: order"
+      class="list-group-item list-group-item-action flex-column align-items-start">
+      <div class="d-flex w-100 justify-content-between">
+        <h6 class="mb-1">{{data.name}}</h6>
+        <small><a href="#">{{data.email}}{{order}}</a></small>
+      </div>
+      <p class="mb-1">{{data.body}}.
+      </p>
+    </div>
+  </div>
+</div>
