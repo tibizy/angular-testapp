@@ -1,0 +1,28 @@
+<div data-ng-controller="PostsController" ui-view>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a ui-sref="users">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Posts</li>
+    </ol>
+  </nav>
+  <div width="100%">
+    <h5 style="display: inline">Posts</h5>
+    <input class="btn btn-primary" style="float: right;" type="button"
+      ui-sref="posts.new" value="New Post">
+  </div>
+  <br />
+  <table class="table">
+    <thead>
+      <th>#</th>
+      <th>Title</th>
+      <th>Comments</th>
+    </thead>
+    <tbody>
+      <tr ng-repeat="data in posts">
+        <td>#{{$index + 1}}</td>
+        <td>{{data.title}}</td>
+        <td><a href="/users/{{user_id}}/posts/{{data.id}}/comments">Comments</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

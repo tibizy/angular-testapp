@@ -1,0 +1,35 @@
+<!doctype html>
+<html ng-app="ngApp">
+
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/app.css">
+  <base href="/" />
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Angular SPA App</a>
+    </nav>
+    <br />
+  </header>
+  <ui-view></ui-view>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+  <script src="assets/lib/angular-ui-router/angular-ui-router.min.js"></script>
+  <script src="assets/lib/ui-bootstrap-tpls-2.5.0.min.js"></script>
+
+  <script src="assets/js/ng-app.js"></script>
+  <script src="pages/users/service.js"></script>
+  <script src="pages/posts/service.js"></script>
+  <script src="pages/comments/service.js"></script>
+  <script src="pages/albums/service.js"></script>
+
+  <script src="pages/users/controller.js"></script>
+  <script src="pages/posts/controller.js"></script>
+  <script src="pages/comments/controller.js"></script>
+  <script src="pages/albums/controller.js"></script>
+</body>
+
+</html>

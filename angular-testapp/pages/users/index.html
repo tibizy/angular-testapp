@@ -1,0 +1,40 @@
+<div data-ng-controller="UsersController" ui-views>
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a ui-sref="users">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Users</li>
+  </ol>
+  <div width="100%">
+    <h5 style="display: inline;">Users</h5>
+
+    <input class="btn btn-primary" style="float: right;" type="button" ui-sref="users.new" value="New User">
+
+    <div style="float: right; margin-right: 2rem; width: 20rem;" class="input-group">
+      <input placeholder="Search User" data-ng-model="searchFilter" class="form-control" value="">
+       <div class="input-group-prepend">
+         <input class="btn btn-primary" type="submit" value="Search" data-ng-click="search()">
+       </div>
+    </div>
+
+  </div>
+  <br />
+  <table class="table">
+    <thead>
+      <th>#</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Actions</th>
+    </thead>
+    <tbody>
+      <tr ng-repeat="data in users">
+        <td>#{{$index + 1}}</td>
+        <td>{{data.name}}</td>
+        <td>{{data.email}}</td>
+        <td>
+          <a ui-sref="posts({ user_id: data.id })">Posts</a>
+          |
+          <a ui-sref="albums({ user_id: data.id })">Albums</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
